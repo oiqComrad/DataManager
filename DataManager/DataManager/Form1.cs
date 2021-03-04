@@ -14,7 +14,7 @@ namespace DataManager
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); //
         }
 
     }
