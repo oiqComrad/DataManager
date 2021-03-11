@@ -40,14 +40,14 @@ namespace DataManager
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(17, 17);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadDataBase});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(686, 32);
             this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Text = "Загрузить";
             // 
             // loadDataBase
             // 
@@ -57,6 +57,7 @@ namespace DataManager
             this.loadDataBase.Name = "loadDataBase";
             this.loadDataBase.Size = new System.Drawing.Size(29, 29);
             this.loadDataBase.Text = "toolStripButton1";
+            this.loadDataBase.ToolTipText = "Загрузить";
             // 
             // dataBaseView
             // 
@@ -70,7 +71,7 @@ namespace DataManager
             this.dataBaseView.Name = "dataBaseView";
             this.dataBaseView.ReadOnly = true;
             this.dataBaseView.RowTemplate.Height = 25;
-            this.dataBaseView.Size = new System.Drawing.Size(800, 418);
+            this.dataBaseView.Size = new System.Drawing.Size(686, 358);
             this.dataBaseView.TabIndex = 1;
             this.dataBaseView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBaseViewCellMouseEnter);
             this.dataBaseView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataBaseViewColumnHeaderMouseClick);
@@ -81,9 +82,9 @@ namespace DataManager
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.dataBaseView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
