@@ -29,20 +29,30 @@ namespace DataManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.loadDataBase = new System.Windows.Forms.ToolStripButton();
             this.dataBaseView = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.построитьГистограммуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.drawHist = new System.Windows.Forms.ToolStripMenuItem();
+            this.drawFunc = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(17, 17);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadDataBase});
+            this.loadDataBase,
+            this.toolStripSeparator1,
+            this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(686, 32);
@@ -80,6 +90,49 @@ namespace DataManager
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.построитьГистограммуToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(209, 26);
+            // 
+            // построитьГистограммуToolStripMenuItem
+            // 
+            this.построитьГистограммуToolStripMenuItem.Name = "построитьГистограммуToolStripMenuItem";
+            this.построитьГистограммуToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.построитьГистограммуToolStripMenuItem.Text = "&Построить гистограмму";
+            this.построитьГистограммуToolStripMenuItem.Click += new System.EventHandler(this.DrawHistogram);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drawHist,
+            this.drawFunc});
+            this.toolStripDropDownButton1.Image = global::DataManager.Properties.Resources.Histogram;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(38, 29);
+            this.toolStripDropDownButton1.Text = "Построить";
+            // 
+            // drawHist
+            // 
+            this.drawHist.Name = "drawHist";
+            this.drawHist.Size = new System.Drawing.Size(180, 22);
+            this.drawHist.Text = "&Гистограмму";
+            // 
+            // drawFunc
+            // 
+            this.drawFunc.Name = "drawFunc";
+            this.drawFunc.Size = new System.Drawing.Size(180, 22);
+            this.drawFunc.Text = "&График ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +145,7 @@ namespace DataManager
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +157,12 @@ namespace DataManager
         private System.Windows.Forms.ToolStripButton loadDataBase;
         private System.Windows.Forms.DataGridView dataBaseView;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem построитьГистограммуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem drawHist;
+        private System.Windows.Forms.ToolStripMenuItem drawFunc;
     }
 }
 
