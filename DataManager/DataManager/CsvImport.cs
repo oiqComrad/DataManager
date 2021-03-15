@@ -5,8 +5,18 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace DataManager
 {
-    public class CsvImport
+    /// <summary>
+    /// Статический класс, метод которого считывает csv файл в DataTable.
+    /// </summary>
+    public static class CsvImport
     {
+        /// <summary>
+        /// Метод считывания csv файла.
+        /// </summary>
+        /// <param name="filePath">Путь файла.</param>
+        /// <param name="separator">Знак-разделитеть.</param>
+        /// <param name="firstRowContainesColumnsName">Является ли первая строка заголовком столбцов.</param>
+        /// <returns></returns>
         public static DataTable NewDataTable(string filePath, string separator = ",", bool firstRowContainesColumnsName = true)
         {
             var dataTable = new DataTable();
@@ -42,6 +52,11 @@ namespace DataManager
             return RemoveEmpty(dataTable);
         }
 
+        /// <summary>
+        /// Метод устанавливет значения по умолчанию, если ячейка оказалась пустая.
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
         public static DataTable RemoveEmpty(DataTable dataTable)
         {
             for (var row = 0; row < dataTable.Rows.Count; row++)

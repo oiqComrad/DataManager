@@ -4,10 +4,17 @@ using System.Windows.Forms;
 
 namespace DataManager
 {
+    /// <summary>
+    /// Класс - форма для настроек нового датасета.
+    /// 
+    /// </summary>
     public partial class DataBaseSettings : Form
     {
+        // Путь файла.
         public string filename;
+        // Закрыта ли форма (для избежания StackOverflow ошибки).
         public bool formClosed = false;
+        // Знак разделитель.
         public string separator = ",";
         public bool firstRowContainesColumnsName = true;
 
@@ -23,12 +30,23 @@ namespace DataManager
             this.KeyPreview = true;
         }
 
+        /// <summary>
+        /// Задать путь файла можно вручную, написан текст в textbox,
+        /// А можно задать через диалог, нажав на знаком директории.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox1Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 textBox1.Text = openFileDialog1.FileName;
         }
 
+        /// <summary>
+        /// Выбор знака разделителя.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBoxCheckedChanged(object sender, EventArgs e)
         {
             var currentCb = (CheckBox)sender;
@@ -49,6 +67,11 @@ namespace DataManager
             }
         }
 
+        /// <summary>
+        /// Закрытие формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataBaseSettingsFormClosing(object sender, FormClosingEventArgs e)
         {
             if (!formClosed)
@@ -58,7 +81,11 @@ namespace DataManager
                 this.Close();
             }
         }
-
+        /// <summary>
+        /// Сохранение настроек и закрытие формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClick(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -74,6 +101,11 @@ namespace DataManager
             }
         }
 
+        /// <summary>
+        /// Обработчик нажатия Enter.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataBaseSettingsKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

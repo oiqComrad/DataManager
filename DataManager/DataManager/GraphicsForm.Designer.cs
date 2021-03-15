@@ -48,7 +48,6 @@ namespace DataManager
             this.chart.Size = new System.Drawing.Size(724, 394);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
-            this.chart.Click += new System.EventHandler(this.chart_Click);
             // 
             // GraphicsForm
             // 

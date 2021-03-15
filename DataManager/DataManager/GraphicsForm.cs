@@ -14,12 +14,18 @@ namespace DataManager
 {
     public partial class GraphicsForm : Form
     {
+        // Словарь для гистограммы.
         Dictionary<string, int> histogramData = new Dictionary<string, int>();
+        // Дефолтный конструктор.
         public GraphicsForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Конструктор для построения гистограммы.
+        /// </summary>
+        /// <param name="data">Список значений.</param>
         public GraphicsForm(List<string> data)
         {
             foreach (var item in data)
@@ -30,6 +36,11 @@ namespace DataManager
             InitializeComponent();
             DrawHistogram();
         }
+        /// <summary>
+        /// Конструктор для построения графика.
+        /// </summary>
+        /// <param name="xValues">Значения для оси абсцисс.</param>
+        /// <param name="yValues">Значения для оси ординат.</param>
         public GraphicsForm(List<double> xValues, List<double> yValues)
         {
             InitializeComponent();
@@ -47,6 +58,10 @@ namespace DataManager
             chart.Series.Add(dataPointSeries);
         }
 
+        /// <summary>
+        /// Метод отрисовки гистограммы.
+        /// Т.к гистограмму отрисовать сложнее, добавил еще один метод, чтобы не нарушать принципы декомпозиции.
+        /// </summary>
         private void DrawHistogram()
         {
             var dataPointSeries = new Series
@@ -62,6 +77,7 @@ namespace DataManager
             Pen startPen = new Pen(Color.FromArgb(255, 152, 190, 120));
             Pen endPen = new Pen(Color.FromArgb(255, 79, 129, 189));
             int iter = 0;
+            // Градиент.
             int rMax = endPen.Color.R;
             int rMin = startPen.Color.R;
             int bMax = endPen.Color.B;
@@ -84,9 +100,5 @@ namespace DataManager
             chart.Series.Last()["PointWidth"] = "1";
         }
 
-        private void chart_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
